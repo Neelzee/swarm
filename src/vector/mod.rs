@@ -1,8 +1,8 @@
 use std::{ops::Sub, ops::Mul};
 
 #[derive(Debug, Clone)]
-pub struct Vector<T> {
-    components: Vec<T>
+pub struct Vector {
+    components: Vec<f32>
 }
 
 
@@ -18,6 +18,10 @@ impl<T: Sub<Output = T> + Mul<Output = T> + std::iter::Sum + Clone> Vector<T> {
 
     pub fn lerp(start: Vector<f32>, end: Vec<f32>, t: f32) -> Vector<f32> {
         Self::from_iter::<Iterator<Item = f32>>(start.into_iter().zip(end.into_iter()).map(|(a, b)| ((1f32 - t) * a + t * b)).collect::<Vec<f32>>().into_iter())
+    }
+
+    pub fn get_components(&self) -> Vec<f32> {
+        self.components.clone()
     }
 }
 
