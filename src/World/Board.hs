@@ -11,8 +11,8 @@ data Quality = Poor | Good | Great
 
 data TileType =
   Food Quality
-  , Resource Quality
-  , Block
+  | Resource Quality
+  | Block
 
 data Tile = Tile {
   type::Maybe TileType
