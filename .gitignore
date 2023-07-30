@@ -1,2 +1,4 @@
 .stack-work/
-*~
+Cargo.lock
+/target
+.vscode
